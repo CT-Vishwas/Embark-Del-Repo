@@ -14,11 +14,16 @@ class BankAccount(metaclass=FactoryMeta):
         self.owner = owner
         self.balance = balance
 
-
-
+class Customer(metaclass=FactoryMeta):
+    def __init__(self, name,email):
+        self.name = name
+        self.email = email
 
 acc_data = {"owner":"Vishwas","balance":1000}
 acc = BankAccount.from_dict(acc_data)
 
+cust_data = {"name": "John", "email": "john@gmail.com"}
+cust = Customer.from_dict(cust_data)
 
 print(acc.owner, acc.balance)
+print(cust.name, cust.email)
